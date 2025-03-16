@@ -1,10 +1,10 @@
-import streamlit as st
+import streamlit as st # type: ignore
 import pandas as pd
 from datetime import datetime, timedelta, date
 import math
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-import altair as alt
+import matplotlib.pyplot as plt # type: ignore
+import matplotlib.dates as mdates # type: ignore
+import altair as alt # type: ignore
 
 # Use your existing imports - these would come from your original files
 from countWeekends import prefix_weekend_counts
