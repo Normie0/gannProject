@@ -22,7 +22,7 @@ def compute_prefix_weekend_counts(start_date, end_date):
 
 
 # Example Usage
-start_date = date(2024, 1, 1)  # Define a start date
+start_date = date(2016, 1, 1)  # Define a start date
 end_date = date(2100, 1, 1)  # Define a long-range end date
 
 # Precompute prefix weekend counts
