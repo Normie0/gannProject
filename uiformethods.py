@@ -154,7 +154,7 @@ def rangeSquaring(stock_price):
     
     return calendar_dates
 
-def thirty_sixty_ninety(dates):
+def thirty_sixty_ninety():
     start_date = datetime.strptime("20:3:2023", "%d:%m:%Y")
     
     calendar_dates = [start_date.strftime("%d %B %Y")]
@@ -203,11 +203,16 @@ top_price = st.sidebar.number_input("Top Squaring Price", value=20222.45, format
 bottom_price = st.sidebar.number_input("Bottom Squaring Price", value=16828.35, format="%.2f")
 range_price = st.sidebar.number_input("Range Squaring Value", value=9, format="%.2f")
 
+top_start_date = st.sidebar.date_input("Top Squaring Start Date", date(2023, 9, 15))
+bottom_start_date = st.sidebar.date_input("Bottom Squaring Start Date", date(2023, 3, 20))
+range_start_date = st.sidebar.date_input("Range Squaring Start Date", date(2025, 3, 3))
+degrees_start_date = st.sidebar.date_input("30-60-90 Start Date", date(2023, 3, 20))
+
 # Calculate dates
 top_dates = topSquaring(top_price)
 bottom_dates = bottomSquaring(bottom_price)
 range_dates = rangeSquaring(range_price)
-degrees_dates = thirty_sixty_ninety(100)
+degrees_dates = thirty_sixty_ninety()
 
 # Create tabs for different views
 tab1, tab2, tab3 = st.tabs(["Date Tables", "Timeline Visualization", "Close Date Matches"])
