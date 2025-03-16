@@ -73,11 +73,10 @@ def get_less_val(value):
         value /= 10
     return value
 
-def topSquaring(stock_price):
+def topSquaring(stock_price, start_date):
     price_greater_than_ten = get_less_val(stock_price)
     count = 2
     temp = price_greater_than_ten
-    start_date = datetime.strptime("15:9:2023", "%d:%m:%Y")
     
     calendar_dates = [start_date.strftime("%d %B %Y")]
     
@@ -98,11 +97,10 @@ def topSquaring(stock_price):
     
     return calendar_dates
 
-def bottomSquaring(stock_price):
+def bottomSquaring(stock_price, start_date):
     price_greater_than_ten = get_less_val(stock_price)
     count = 2
     temp = price_greater_than_ten
-    start_date = datetime.strptime("20:3:2023", "%d:%m:%Y")
     
     calendar_dates = [start_date.strftime("%d %B %Y")]
     
@@ -123,11 +121,10 @@ def bottomSquaring(stock_price):
     
     return calendar_dates
 
-def rangeSquaring(stock_price):
+def rangeSquaring(stock_price, start_date):
     range_price = math.sqrt(stock_price)
     count = 2
     temp = range_price
-    start_date = datetime.strptime("3:3:2025", "%d:%m:%Y")
     
     calendar_dates = [start_date.strftime("%d %B %Y")]
     
@@ -154,9 +151,7 @@ def rangeSquaring(stock_price):
     
     return calendar_dates
 
-def thirty_sixty_ninety():
-    start_date = datetime.strptime("20:3:2023", "%d:%m:%Y")
-    
+def thirty_sixty_ninety(start_date):
     calendar_dates = [start_date.strftime("%d %B %Y")]
     
     angles = [30, 60, 90, 120, 180, 240, 270, 360]
@@ -209,10 +204,10 @@ range_start_date = st.sidebar.date_input("Range Squaring Start Date", date(2025,
 degrees_start_date = st.sidebar.date_input("30-60-90 Start Date", date(2023, 3, 20))
 
 # Calculate dates
-top_dates = topSquaring(top_price)
-bottom_dates = bottomSquaring(bottom_price)
-range_dates = rangeSquaring(range_price)
-degrees_dates = thirty_sixty_ninety()
+top_dates = topSquaring(top_price, top_start_date)
+bottom_dates = bottomSquaring(bottom_price, bottom_start_date)
+range_dates = rangeSquaring(range_price, range_start_date)
+degrees_dates = thirty_sixty_ninety(degrees_start_date)
 
 # Create tabs for different views
 tab1, tab2, tab3 = st.tabs(["Date Tables", "Timeline Visualization", "Close Date Matches"])
